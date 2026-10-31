@@ -1,8 +1,8 @@
 PROGRAM main
   VAR
-    start_pb        : BOOL AT %IX0.0;
-    stop_pb         : BOOL AT %IX0.1;
-    belt_moving     : BOOL AT %IX0.2;
+    start_pb        : BOOL AT %MX0.0;
+    stop_pb         : BOOL AT %MX0.1;
+    belt_moving     : BOOL AT %MX0.2;
     motor_run       : BOOL AT %QX0.0;
     start_beacon    : BOOL AT %QX0.1;
     start_requested : BOOL;
@@ -10,7 +10,6 @@ PROGRAM main
     startup_timer   : TON;
     confirm_timer   : TON;
   END_VAR
-
 
 (* 1. Memory: remember that a start was requested *)
   start_requested := (start_pb OR start_requested) AND NOT stop_pb;
