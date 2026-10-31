@@ -6,7 +6,7 @@ PROGRAM main
     motor_run       : BOOL AT %QX0.0;
     start_beacon    : BOOL AT %QX0.1;
     start_requested : BOOL;
-    belt_no_motion  : BOOL;
+    belt_no_motion  : BOOL AT %QX0.2;
     startup_timer   : TON;
     confirm_timer   : TON;
   END_VAR
